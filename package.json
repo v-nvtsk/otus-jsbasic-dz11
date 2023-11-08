@@ -1,0 +1,53 @@
+{
+  "name": "otus-jsbasic-git",
+  "version": "1.0.0",
+  "description": "Assembly for otus-jsbasic",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "jest",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
+    "lint:prod": "eslint ./src --fix --color --rule \"{\"no-console\":\"error\"}\"",
+    "prepare": "husky install",
+    "prettier": "npx prettier src/**/*.js --check",
+    "prettier:fix": "npm run prettier -- --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/v-nvtsk/otus-jsbasic-git.git"
+  },
+  "author": "Novitskiy Vladislav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/v-nvtsk/otus-jsbasic-git/issues"
+  },
+  "homepage": "https://github.com/v-nvtsk/otus-jsbasic-git#readme",
+  "devDependencies": {
+    "@testing-library/dom": "^9.3.3",
+    "@testing-library/jest-dom": "^6.1.4",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-html": "^7.1.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jsdom": "^22.1.0",
+    "lint-staged": "^15.0.2",
+    "prettier": "^3.0.3",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-standard-scss": "^11.1.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "echo \"Start lint-staged from package.json\"",
+      "npx eslint ./src --fix --color --rule \"{\"no-console\":\"error\"}\""
+    ],
+    "*.css": "stylelint",
+    "*.scss": "stylelint --syntax=scss"
+  }
+}
