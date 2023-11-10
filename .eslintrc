@@ -11,8 +11,15 @@
     "airbnb/base",
     "prettier"
   ],
+  "ignorePatterns": [
+    "node_modules",
+    ".vscode",
+    ".git",
+    "src/__tests__",
+    "jest.config.js"
+  ],
   "rules": {
-    "no-console": "warn",
+    "no-console": "off",
     "indent": [
       "error",
       2
