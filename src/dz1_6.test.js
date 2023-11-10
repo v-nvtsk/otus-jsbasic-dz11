@@ -93,6 +93,71 @@ describe("dz 1 to 6 test suite", () => {
       expect(dz2_2).toBeInstanceOf(Function);
       expect(dz2_3).toBeInstanceOf(Function);
     })
+    describe('Test dz2_1', () => {
+      /*
+        1.В переменных a и b хранятся числа. Вывести в
+        консоль наибольшее из них
+     */
+      const testData = [
+        { a: 1, b: 2, result: "2" },
+        { a: -2, b: 1, result: "1" },
+        { a: '', b: '', result: 'Неверный ввод' },
+        { a: undefined, b: undefined, result: 'Неверный ввод' },
+        { a: 'text', b: 'text', result: 'Неверный ввод' }
+      ]
+
+      testData.forEach(({ a, b, result }) => {
+        it(`should return '${result}' for a = ${a}, b = ${b}`, () => {
+          dz2_1(a, b)
+          expect(console.log).toHaveBeenCalledWith(result);
+        })
+      })
+    });
+
+    describe('Test dz2_2', () => {
+      /*
+        2.Запросить у пользователя ввод числа от 1 до 12.
+        Вывести в консоль название месяца, соответствующее
+        этому числу (1 — январь, 2 — февраль и т.д.).
+     */
+      const testData = [
+        { a: '1', result: 'январь' },
+        { a: '12', result: 'декабрь' },
+        { a: 'text', result: 'Неверный ввод' }
+      ]
+
+      testData.forEach(({ a, result }) => {
+        it(`should return '${result}' for a = ${a}`, () => {
+          dz2_2(a)
+          expect(console.log).toHaveBeenCalledWith(result);
+        })
+      })
+    });
+
+    describe('Test dz2_3', () => {
+      /*
+        *В переменных circle и square хранятся площади круга
+        и квадрата соответственно. Написать программу,
+        которая определяет, поместится ли круг в квадрат.
+     */
+
+      const testData = [
+        { circle: 12.56, square: 16, result: "YES" },
+        { circle: 12.57, square: 16, result: "NO" },
+        { circle: 3.14, square: 4, result: "YES" },
+        { circle: 'text', square: 'text', result: 'Неверный ввод' },
+        { circle: undefined, square: undefined, result: 'Неверный ввод' },
+        { circle: '', square: '', result: 'Неверный ввод' },
+        { circle: 12.56, square: undefined, result: "Неверный ввод" }
+      ]
+
+      testData.forEach(({ circle, square, result }) => {
+        it(`should return '${result}' for circle = ${circle}, square = ${square}`, () => {
+          dz2_3(circle, square)
+          expect(console.log).toHaveBeenCalledWith(result);
+        })
+      })
+    });
   });
 
   describe("dz3", () => {
