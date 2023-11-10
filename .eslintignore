@@ -1,5 +1,4 @@
 node_modules
 /.vscode
 /.git
-/src/**/*.test.js
-*.config.js
+*.config.[mct]js
