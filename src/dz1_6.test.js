@@ -314,6 +314,62 @@ describe("dz 1 to 6 test suite", () => {
       expect(dz6_isWord).toBeInstanceOf(Function);
       expect(dz6_pow).toBeInstanceOf(Function);
     })
+    describe('Test dz6_diff', () => {
+      /*
+        1.Напишите функцию diff, которая получает в качестве
+        параметров 2 числа и возвращает разницу между
+        наибольшим и наименьшим.
+     */
+      const testData = [
+        { a: 1, b: 5, result: 4 },
+        { a: 1, b: 1, result: 0 },
+        { a: -1, b: 5, result: 6 }
+      ]
+
+      testData.forEach(({ a, b, result }) => {
+        it(`should return '${result}' for a = ${a}, b = ${b}`, () => {
+          dz6_diff(a, b)
+          expect(console.log).toHaveBeenCalledWith(result);
+        })
+      })
+    });
+
+    describe('Test dz6_isWord', () => {
+      /*
+        2.Напишите функцию isWord, которая принимает на
+        вход текстовую строку. Функция возвращает true, если
+        строка состоит из одного слова и false, если из
+        нескольких.
+     */
+      const testData = [
+        { input: 'word', result: true },
+        { input: 'double word', result: false }
+      ]
+
+      testData.forEach(({ input, result }) => {
+        it(`should return '${result}' for input = ${input}`, () => {
+          expect(dz6_isWord(input)).toEqual(result);
+        })
+      })
+    });
+
+    describe('Test dz6_pow', () => {
+      /*
+        2.Напишите функцию isWord, которая принимает на
+        вход текстовую строку. Функция возвращает true, если
+        строка состоит из одного слова и false, если из
+        нескольких.
+     */
+      const testData = [
+        { a: 2, b: 3, result: 8 },
+        { a: 100, b: 0, result: 1 }
+      ]
+      testData.forEach(({ a, b, result }) => {
+        it(`should return '${result}' for input = ${a}, ${b}`, () => {
+          expect(dz6_pow(a, b)).toEqual(result);
+        })
+      })
+    });
   });
 })
 
