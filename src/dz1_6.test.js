@@ -6,6 +6,14 @@ import {
 } from './dz1_6';
 
 describe("dz 1 to 6 test suite", () => {
+  beforeEach(() => {
+    console.log = jest.fn();
+  });
+
+  afterEach(() => {
+    console.log.mockRestore();
+  });
+
   describe("dz1", () => {
 
     it('should be a function', () => {
