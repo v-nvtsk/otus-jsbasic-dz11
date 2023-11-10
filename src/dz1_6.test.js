@@ -272,6 +272,40 @@ describe("dz 1 to 6 test suite", () => {
     it('should be a function', () => {
       expect(dz5).toBeInstanceOf(Function);
     })
+    describe('Test dz5', () => {
+      /*
+        Создайте массив целых чисел из 10 элементов.
+        1.Выведите в консоль сумму всех элементов массива.
+        2.Создайте новый массив на основе исходного, в
+        котором каждый элемент будет вдвое больше
+        элемента исходного массива с таким же индексом.
+        (a[1] = 3, b[1] = 6, где a — исходный массив, b — новый
+        массив).
+        3.*Найдите и выведите в консоль наибольший и
+        наименьший элементы исходного массива.
+     */
+
+      const sum = 1 + 3 + 5 + 7 + 9 + 11 + 13 + 15 + 17 + 19
+
+      const testData = [
+        {
+          input: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19],
+          result: [sum,
+            '2 6 10 14 18 22 26 30 34 38',
+            '38 2'
+          ]
+        }
+      ]
+      testData.forEach(({ input, result }) => {
+        it(`should return '${result.join(' | ')}' for input = ${input}`, () => {
+          dz5(...input)
+          expect(console.log).toHaveBeenCalledTimes(result.length);
+          for (let i = 0; i < result.length; i++) {
+            expect(console.log).toHaveBeenNthCalledWith(i + 1, result[i]);
+          }
+        })
+      })
+    });
   })
 
   describe("dz6", () => {
