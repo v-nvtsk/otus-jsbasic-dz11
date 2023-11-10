@@ -28,7 +28,7 @@ fi
 echo -e ">> Finish checking branch name.\n==="
 
 echo -e ">> Run lint-staged.\n==="
-npm run lint:prod
+npm run lint-staged
 
 echo -e ">> Run tests.\n==="
 npm test
