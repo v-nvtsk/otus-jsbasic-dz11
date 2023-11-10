@@ -7,6 +7,7 @@
     "start": "node ./src/index.js",
     "test": "jest",
     "test:watch": "clear && node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js --watch --verbose",
+    "lint-staged": "lint-staged",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "lint:prod": "eslint ./src --fix --color --rule \"{\"no-console\":\"error\"}\"",
