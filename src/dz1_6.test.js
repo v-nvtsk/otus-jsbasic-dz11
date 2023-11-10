@@ -236,6 +236,36 @@ describe("dz 1 to 6 test suite", () => {
     it('should be a function', () => {
       expect(dz4).toBeInstanceOf(Function);
     })
+    describe('Test dz4', () => {
+      /*
+        Создайте объект user, содержащий поле name со
+        значением ‘John’.
+        1.Запросить у пользователя ввод числа. Записать
+        введенное значение в поле age объекта user.
+        2.Создать копию объекта user с именем admin.
+        Добавить новому объекту поле role со значением
+        ‘admin’.
+        *Записать все значения полей объекта admin в
+        отдельные переменные. Имена переменных
+        должны совпадать с названиями полей.
+     */
+
+      const testData = [
+        { n: 39, result: ['John', 'admin', 39] },
+        { n: 40, result: ['John', 'admin', 40] },
+        { n: 'text', result: ['Неверный ввод'] }
+      ]
+
+      testData.forEach(({ n, result }) => {
+        it(`should return '${result}' for n = ${n}`, () => {
+          dz4(n)
+          expect(console.log).toHaveBeenCalledTimes(result.length);
+          for (let i = 0; i < result.length; i++) {
+            expect(console.log).toHaveBeenNthCalledWith(i + 1, result[i]);
+          }
+        })
+      })
+    });
   });
 
   describe("dz5", () => {
