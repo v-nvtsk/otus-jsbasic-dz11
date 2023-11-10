@@ -48,9 +48,11 @@
     "stylelint-config-standard-scss": "^11.1.0"
   },
   "lint-staged": {
-    "*.{js,jsx}": [
+    "*.{cjs,mjs,ts,tsx,js,jsx}": [
       "echo \"Start lint-staged from package.json\"",
-      "npx eslint ./src --fix --color --rule \"{\"no-console\":\"error\"}\""
+      "eslint ./src --fix --color",
+      "echo -e \">> Run tests.\n===\"",
+      "jest --bail --findRelatedTests"
     ],
     "*.css": "stylelint",
     "*.scss": "stylelint --syntax=scss"
