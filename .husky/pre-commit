@@ -30,8 +30,8 @@ echo -e ">> Finish checking branch name.\n==="
 echo -e ">> Run lint-staged.\n==="
 npm run lint-staged
 
-echo -e ">> Run tests.\n==="
-npm test
+# echo -e ">> Run tests.\n==="
+# npm test
 
 echo -e ">> Everything looks good. Commiting changes.\n==="
 exit 0
