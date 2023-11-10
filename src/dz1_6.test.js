@@ -166,6 +166,70 @@ describe("dz 1 to 6 test suite", () => {
       expect(dz3_2).toBeInstanceOf(Function);
       expect(dz3_3).toBeInstanceOf(Function);
     })
+    test('Test dz3_1', () => {
+      /*
+        1.Вывести в консоль сумму всех целых чисел от 50 до 100.
+     */
+
+
+      dz3_1();
+      expect(console.log).toHaveBeenCalledWith(`${(100 * (100 + 1) / 2 - 50 * (50 + 1) / 2 + 50)}`);
+    });
+
+    test('Test dz3_2', () => {
+      /*
+        2.Вывести в консоль таблицу умножения на 7.
+        7 x 1 = 7
+        7 x 2 = 14
+        …
+        7 x 9 = 63
+     */
+
+      const testData = ['7 x 1 = 7',
+        '7 x 2 = 14',
+        '7 x 3 = 21',
+        '7 x 4 = 28',
+        '7 x 5 = 35',
+        '7 x 6 = 42',
+        '7 x 7 = 49',
+        '7 x 8 = 56',
+        '7 x 9 = 63']
+      dz3_2();
+      expect(console.log).toHaveBeenCalledTimes(9);
+      for (let i = 1; i < 10; i++) {
+        expect(console.log).toHaveBeenNthCalledWith(i, testData[i - 1]);
+      }
+    });
+
+    describe('Test dz3_3', () => {
+      /*
+        *Запросить у пользователя ввод числа N. Вывести в
+        консоль среднее арифметическое всех нечётных
+        чисел от 1 до N.
+     */
+      const sum = (n) => (Math.floor((n + 1) / 2)) ** 2;
+      const average = (n) => sum(n) / Math.ceil(n / 2)
+
+      const testData = [
+        { n: 'text', result: 'Неверный ввод' },
+        { n: undefined, result: 'Неверный ввод' },
+        { n: '', result: 'Неверный ввод' },
+        { n: 0, result: 'Неверный ввод' },
+        { n: 1, result: 1 },
+        { n: 2, result: 1 },
+        { n: 3, result: 2 },
+        { n: 4, result: 2 },
+        { n: 15, result: average(15) },
+        { n: 16, result: average(15) }
+      ]
+
+      testData.forEach(({ n, result }) => {
+        it(`should return '${result}' for n = ${n}`, () => {
+          dz3_3(n)
+          expect(console.log).toHaveBeenCalledWith(result);
+        })
+      })
+    });
   })
 
   describe("dz4", () => {
