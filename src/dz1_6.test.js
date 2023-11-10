@@ -42,6 +42,29 @@ describe("dz 1 to 6 test suite", () => {
       })
     })
 
+    describe('Test dz1_2', () => {
+      /*
+        2.В двух переменных хранятся строки символов.
+        Написать программу, которая выведет в консоль
+        суммарное количество символов в обоих строках.
+     */
+      const testData = [
+        { a: "a", b: "b", result: "2" },
+        { a: "string1", b: "lorem", result: "12" },
+        { a: "", b: "", result: "0" },
+        { a: undefined, b: undefined, result: "0" }
+      ]
+      testData.forEach(({ a, b, result }) => {
+
+        it(`should return '${result}' for a = ${a}, b = ${b}`, () => {
+
+          dz1_2(a, b);
+          expect(console.log).toHaveBeenCalledWith(result);
+        });
+      })
+
+    })
+
   });
 
   describe("dz2", () => {
