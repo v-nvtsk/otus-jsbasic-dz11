@@ -65,6 +65,26 @@ describe("dz 1 to 6 test suite", () => {
 
     })
 
+    describe('Test dz1_3', () => {
+      /* 
+        3.*Написать программу, которая запрашивает у
+        пользователя ввод трёхзначного числа, а потом
+        выводит в консоль сумму цифр введённого числа.
+      */
+      const testData = [
+        { a: '367', result: '16' },
+        { a: '99', result: 'Неверный ввод' },
+        { a: '1234', result: 'Неверный ввод' },
+        { a: '', result: 'Неверный ввод' },
+        { a: 'text', result: 'Неверный ввод' }
+      ]
+      testData.forEach(({ a, result }) => {
+        it(`should return '${result}' for a = ${a}`, () => {
+          dz1_3(a);
+          expect(console.log).toHaveBeenCalledWith(result);
+        });
+      });
+    });
   });
 
   describe("dz2", () => {
