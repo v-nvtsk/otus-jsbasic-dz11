@@ -1,8 +1,9 @@
+/* eslint-disable import/extensions */
 // eslint-disable-next-line no-unused-vars
-import * as dz1 from './dz1_6';
-import makeInteractiveList from './dz7';
-import { dayOfWeek, examineYounger } from './dz8';
-import { circleLengthAndSquare, quadricEquation } from './dz9';
+import * as dz1 from './dz1_6.js';
+import makeInteractiveList from './dz7.js';
+import { dayOfWeek, examineYounger } from './dz8.js';
+import { circleLengthAndSquare, quadricEquation } from './dz9.js';
 
 
 dz1.dz1_1();
