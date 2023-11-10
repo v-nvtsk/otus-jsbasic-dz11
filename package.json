@@ -49,10 +49,10 @@
   },
   "lint-staged": {
     "*.{cjs,mjs,ts,tsx,js,jsx}": [
-      "echo \"Start lint-staged from package.json\"",
+      "echo \"\n===\n>> Start lint-staged from package.json\"",
       "eslint ./src --fix --color",
-      "echo -e \">> Run tests.\n===\"",
-      "jest --bail --findRelatedTests"
+      "echo -e \"\n===\n>> Run tests.",
+      "jest --bail --findRelatedTests --passWithNoTests"
     ],
     "*.css": "stylelint",
     "*.scss": "stylelint --syntax=scss"
