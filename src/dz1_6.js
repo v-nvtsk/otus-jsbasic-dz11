@@ -126,7 +126,7 @@ function dz6_pow(a, x) {
   return a ** x;
 }
 
-module.exports = {
+export  {
   dz1_1,
   dz1_2,
   dz1_3,
