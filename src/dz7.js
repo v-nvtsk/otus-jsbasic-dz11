@@ -42,4 +42,4 @@ function makeInteractiveList(parent) {
 }
 
 
-module.exports = makeInteractiveList;
+export default makeInteractiveList;
