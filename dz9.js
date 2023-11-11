@@ -96,7 +96,7 @@ function quadricEquation(parentEl) {
 
 
 }
-module.exports = {
+export {
   rectTriangle,
   circleLengthAndSquare,
   quadricEquation
