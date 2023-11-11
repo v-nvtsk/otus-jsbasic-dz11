@@ -9,11 +9,8 @@ function dz1_1(a, b) {
   return result
 }
 
-function dz1_2(a, b) {
-  // eslint-disable-next-line no-unsafe-optional-chaining
-  const num1 = Number(a?.length ?? 0);
-  const num2 = Number(b?.length ?? 0);
-  const result = String(num1 + num2);
+function dz1_2(a = '', b = '') {
+  const result = String(a.length + b.length);
   console.log(result);
   return result
 }
