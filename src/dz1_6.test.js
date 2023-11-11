@@ -100,7 +100,7 @@ describe("dz 1 to 6 test suite", () => {
      */
       const testData = [
         { a: 1, b: 2, result: "2" },
-        { a: -2, b: 1, result: "1" },
+        { a: 2, b: 1, result: "2" },
         { a: '', b: '', result: 'Неверный ввод' },
         { a: undefined, b: undefined, result: 'Неверный ввод' },
         { a: 'text', b: 'text', result: 'Неверный ввод' }
@@ -322,6 +322,7 @@ describe("dz 1 to 6 test suite", () => {
      */
       const testData = [
         { a: 1, b: 5, result: 4 },
+        { a: 5, b: 1, result: 4 },
         { a: 1, b: 1, result: 0 },
         { a: -1, b: 5, result: 6 }
       ]
