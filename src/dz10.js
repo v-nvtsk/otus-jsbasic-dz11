@@ -24,4 +24,4 @@ function validateString(parent) {
   })
 
 }
-module.exports = validateString
+export default validateString;
