@@ -1,4 +1,7 @@
 function validateString(parent) {
+  const header = document.createElement('h2')
+  header.innerHTML = 'Валидация дата/e-mail/Телефон'
+  parent.append(header)
 
   const input = document.createElement('input')
   const button = document.createElement('button')
