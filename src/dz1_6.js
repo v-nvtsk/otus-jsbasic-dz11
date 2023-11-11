@@ -1,10 +1,12 @@
 /* eslint-disable camelcase */
 function dz1_1(a, b) {
-  if (typeof a !== 'number' || typeof b !== 'number') {
+  const num1 = Number(a);
+  const num2 = Number(b);
+  if (Number.isNaN(num1) || Number.isNaN(num2)) {
     console.log("Неверный ввод");
     return "Неверный ввод"
   }
-  const result = `${a * b} ${a + b}`
+  const result = `${num1 * num2} ${num1 + num2}`
   console.log(result);
   return result
 }
