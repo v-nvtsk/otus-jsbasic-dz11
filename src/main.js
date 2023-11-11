@@ -4,6 +4,7 @@ import * as dz1 from './dz1_6.js';
 import makeInteractiveList from './dz7.js';
 import { dayOfWeek, examineYounger } from './dz8.js';
 import { circleLengthAndSquare, quadricEquation } from './dz9.js';
+import validateString from './dz10.js';
 
 function createContainer(id) {
   const container = document.createElement('div');
@@ -31,21 +32,4 @@ dayOfWeek(createContainer('dz81'));
 examineYounger(createContainer('dz82'));
 circleLengthAndSquare(createContainer('dz91'));
 quadricEquation(createContainer('dz92'));
-
-const dz8 = document.querySelector('#dz8');
-const dz8ex1 = document.createElement('div');
-const dz8ex2 = document.createElement('div');
-dz8.append(dz8ex1);
-dz8.append(dz8ex2);
-
-dayOfWeek(dz8ex1);
-examineYounger(dz8ex2);
-
-const dz9 = document.querySelector('#dz9');
-const dz9ex1 = document.createElement('div');
-const dz9ex2 = document.createElement('div');
-dz9.append(dz9ex1);
-dz9.append(dz9ex2);
-
-circleLengthAndSquare(dz9ex1);
-quadricEquation(dz9ex2);
+validateString(createContainer('dz10'))
