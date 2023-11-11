@@ -5,6 +5,12 @@ import makeInteractiveList from './dz7.js';
 import { dayOfWeek, examineYounger } from './dz8.js';
 import { circleLengthAndSquare, quadricEquation } from './dz9.js';
 
+function createContainer(id) {
+  const container = document.createElement('div');
+  container.id = id;
+  document.body.append(container);
+  return container
+}
 
 dz1.dz1_1();
 dz1.dz1_2();
@@ -20,8 +26,11 @@ dz1.dz5();
 dz1.dz6_diff();
 
 
-const dz7 = document.querySelector('#dz7');
-makeInteractiveList(dz7);
+makeInteractiveList(createContainer('dz7'));
+dayOfWeek(createContainer('dz81'));
+examineYounger(createContainer('dz82'));
+circleLengthAndSquare(createContainer('dz91'));
+quadricEquation(createContainer('dz92'));
 
 const dz8 = document.querySelector('#dz8');
 const dz8ex1 = document.createElement('div');
