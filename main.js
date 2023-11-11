@@ -6,7 +6,7 @@ import { dayOfWeek, examineYounger } from './dz8.js';
 import { circleLengthAndSquare, quadricEquation } from './dz9.js';
 import validateString from './dz10.js';
 
-function createContainer(id) {
+export default function createContainer(id) {
   const container = document.createElement('div');
   container.id = id;
   document.body.append(container);
