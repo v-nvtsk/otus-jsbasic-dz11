@@ -71,7 +71,7 @@ function examineYounger(parent) {
   })
 }
 
-module.exports = {
+export {
   dayOfWeek,
   examineYounger
 }
