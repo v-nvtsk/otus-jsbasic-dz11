@@ -45,7 +45,7 @@
     "prettier": "^3.0.3"
   },
   "lint-staged": {
-    "*.{js}": [
+    "*.js": [
       "echo \"\n===\n>> Start lint-staged from package.json\"",
       "eslint ./src --fix --color",
       "echo -e \"\n===\n>> Run tests.",
