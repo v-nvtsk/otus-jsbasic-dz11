@@ -15,8 +15,7 @@
   "ignorePatterns": [
     "node_modules",
     ".vscode",
-    ".git",
-    "jest.config.js"
+    ".git"
   ],
   "rules": {
     "no-console": "off",
