@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /**
  * For a detailed explanation regarding each configuration property, visit:
  * https://jestjs.io/docs/configuration
@@ -192,7 +193,7 @@ const config = {
   // watchPathIgnorePatterns: [],
 
   // Whether to use watchman for file crawling
-  watchman: true,
+  watchman: true
 };
 
 module.exports = config;
