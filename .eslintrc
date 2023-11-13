@@ -1,6 +1,7 @@
 {
   "plugins": [
-    "jest"
+    "jest",
+    "prettier"
   ],
   "env": {
     "browser": true,
