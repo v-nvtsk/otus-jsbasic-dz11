@@ -1,19 +1,18 @@
 /* eslint-disable camelcase */
 function dz1_1(a, b) {
-  if (typeof a !== 'number' || typeof b !== 'number') {
+  const num1 = Number(a);
+  const num2 = Number(b);
+  if (Number.isNaN(num1) || Number.isNaN(num2)) {
     console.log("Неверный ввод");
     return "Неверный ввод"
   }
-  const result = `${a * b} ${a + b}`
+  const result = `${num1 * num2} ${num1 + num2}`
   console.log(result);
   return result
 }
 
-function dz1_2(a, b) {
-  // eslint-disable-next-line no-unsafe-optional-chaining
-  const num1 = Number(a?.length ?? 0);
-  const num2 = Number(b?.length ?? 0);
-  const result = String(num1 + num2);
+function dz1_2(a = '', b = '') {
+  const result = String(a.length + b.length);
   console.log(result);
   return result
 }
