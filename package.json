@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./src/index.js",
     "test": "jest",
-    "test:watch": "clear && node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js --watch --verbose",
+    "test:watch": "clear && jest --watch --verbose",
     "lint-staged": "lint-staged",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/v-nvtsk/otus-jsbasic-git.git"
+    "url": "git+https://github.com/v-nvtsk/otus-jsbasic-dz11.git"
   },
   "author": "Novitskiy Vladislav",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/v-nvtsk/otus-jsbasic-git/issues"
+    "url": "https://github.com/v-nvtsk/otus-jsbasic-dz11/issues"
   },
-  "homepage": "https://github.com/v-nvtsk/otus-jsbasic-git#readme",
+  "homepage": "https://github.com/v-nvtsk/otus-jsbasic-dz11",
   "devDependencies": {
     "@babel/core": "^7.23.3",
     "@babel/preset-env": "^7.23.3",
