@@ -11,8 +11,9 @@ describe("dayOfWeek", () => {
   beforeEach(() => {
     document.body.innerHTML = '';
     parentEl = document.createElement('div')
-    document.body.append(parentEl);
+
     dayOfWeek(parentEl);
+
     input = parentEl.querySelector('input')
     button = parentEl.querySelector('button')
     resultStr = parentEl.querySelector('p');
@@ -60,10 +61,8 @@ describe("examineYounger", () => {
     expect(examineYounger).toBeInstanceOf(Function);
   })
   let parentEl; let inputs; let button; let resultStr;
-  
   beforeEach(() => {
     parentEl = document.createElement('div')
-    document.body.append(parentEl)
     examineYounger(parentEl);
 
     inputs = parentEl.querySelectorAll('input')
