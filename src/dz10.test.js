@@ -5,13 +5,14 @@ describe("validateString", () => {
     expect(validateString).toBeInstanceOf(Function);
   })
 
-  const parent = document.createElement('div');
-  document.body.append(parent);
-  validateString(parent);
-
-  const input = parent.querySelector('input');
-  const button = parent.querySelector('button');
-  const resultString = parent.querySelector('p');
+  let parent; let input; let button; let resultString
+  beforeEach(() => {
+    parent = document.createElement('div');
+    validateString(parent);
+    input = parent.querySelector('input');
+    button = parent.querySelector('button');
+    resultString = parent.querySelector('p');
+  })
 
   it("should create initial markup", () => {
     expect(input).toBeTruthy();
