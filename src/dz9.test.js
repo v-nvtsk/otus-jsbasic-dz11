@@ -39,12 +39,14 @@ describe("circleLengthAndSquare", () => {
     { r: 'text', result: [0, 0] }
   ]
 
-  const parent = document.createElement('div');
-  document.body.append(parent);
-  circleLengthAndSquare(parent);
-  const input = parent.querySelector('input');
-  const button = parent.querySelector('button');
-  const resultString = parent.querySelector('p')
+  let parent; let input; let button; let resultString
+  beforeEach(() => {
+    parent = document.createElement('div');
+    circleLengthAndSquare(parent);
+    input = parent.querySelector('input');
+    button = parent.querySelector('button');
+    resultString = parent.querySelector('p')
+  })
 
   it("should create initial markup", () => {
     expect(input).toBeTruthy();
@@ -82,17 +84,18 @@ describe("quadricEquation", () => {
     { a: 1, b: 2, c: 3, result: 'No roots' } // x^2 + 2x + 3 = 0 (Complex roots)
   ];
 
-  const parent = document.createElement('div');
-  document.body.append(parent);
+  let parent; let inputA; let inputB; let inputC; let button; let resultString;
+  beforeEach(() => {
+    parent = document.createElement('div');
+    quadricEquation(parent);
 
-  quadricEquation(parent);
+    inputA = parent.querySelector('input.inputA');
+    inputB = parent.querySelector('input.inputB');
+    inputC = parent.querySelector('input.inputC');
 
-  const inputA = parent.querySelector('input.inputA');
-  const inputB = parent.querySelector('input.inputB');
-  const inputC = parent.querySelector('input.inputC');
-
-  const button = parent.querySelector('button');
-  const resultString = parent.querySelector('p')
+    button = parent.querySelector('button');
+    resultString = parent.querySelector('p')
+  })
 
   it("should create initial markup", () => {
     expect(inputA).toBeTruthy();
