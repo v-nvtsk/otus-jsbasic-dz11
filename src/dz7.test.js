@@ -17,7 +17,6 @@ describe("makeInteractiveList", () => {
 
   beforeEach(() => {
     parent = document.createElement('div');
-    document.body.append(parent);
     makeInteractiveList(parent);
     input = parent.querySelector('input');
     button = parent.querySelector('button');
