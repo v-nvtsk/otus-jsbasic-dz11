@@ -13,13 +13,35 @@ function validateString(parent) {
   parent.append(resultString);
 
   button.addEventListener('click', () => {
-    const str = input.value;
+    const inputString = input.value;
+    function isDate(str) {
+      if (/\d{1,2}\.\d{1,2}\.\d{4}/gi.test(str)) {
+        const [day, month, year] = str.split('.').map(Number);
+        const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        if (month < 1 || month > 12 || day < 1 || day > daysInMonth[month - 1]) {
+          if (month === 2 && day === 29 && (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0))) {
+            return true
+          }
+          return false
+        }
+        return true
+      }
+      return false
+    }
 
-    if (/\d{1,2}\.\d{1,2}\.\d{4}/gi.test(str)) {
+    function ieEmail(str) {
+      return /\w@\w+\.\w+/gi.test(str)
+    }
+
+    function isPhone(str) {
+      return /(\+)?(7|8)-?\(?\d{3}\)?-?\d{3}(-?\d{2}){2}/ig.test(str)
+    }
+
+    if (isDate(inputString)) {
       resultString.innerHTML = 'Дата';
-    } else if (/\w@\w+\.\w+/gi.test(str)) {
+    } else if (ieEmail(inputString)) {
       resultString.innerHTML = 'Электронная почта';
-    } else if (/(\+)?(7|8)-?\(?\d{3}\)?-?\d{3}(-?\d{2}){2}/ig.test(str)) {
+    } else if (isPhone(inputString)) {
       resultString.innerHTML = 'Номер телефона'
     } else {
       resultString.innerHTML = 'Неизвестный тип данных'
