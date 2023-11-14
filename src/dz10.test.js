@@ -1,25 +1,28 @@
-import validateString from "./dz10";
+import validateString from './dz10';
 
-describe("validateString", () => {
-  it("should be a function", () => {
+describe('validateString', () => {
+  it('should be a function', () => {
     expect(validateString).toBeInstanceOf(Function);
-  })
+  });
 
-  let parent; let input; let button; let resultString
+  let parent;
+  let input;
+  let button;
+  let resultString;
   beforeEach(() => {
     parent = document.createElement('div');
     validateString(parent);
     input = parent.querySelector('input');
     button = parent.querySelector('button');
     resultString = parent.querySelector('p');
-  })
+  });
 
-  it("should create initial markup", () => {
+  it('should create initial markup', () => {
     expect(input).toBeTruthy();
     expect(button).toBeTruthy();
     expect(button.innerHTML).toBe('Проверить');
     expect(resultString).toBeTruthy();
-  })
+  });
 
   const testData = [
     { str: '01.01.2023', result: 'Дата' },
@@ -37,14 +40,13 @@ describe("validateString", () => {
     { str: '01-01-2023', result: 'Неизвестный тип данных' },
     { str: 'test', result: 'Неизвестный тип данных' },
     { str: 'test@', result: 'Неизвестный тип данных' }
-  ]
+  ];
 
   testData.forEach(({ str, result }) => {
     it(`should return '${result}' for string: '${str}'`, () => {
       input.value = str;
       button.click();
-      expect(resultString.innerHTML).toBe(`${result}`)
-    })
-  })
-
-})
+      expect(resultString.innerHTML).toBe(`${result}`);
+    });
+  });
+});
