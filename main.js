@@ -10,7 +10,7 @@ export default function createContainer(id) {
   const container = document.createElement('div');
   container.id = id;
   document.body.append(container);
-  return container
+  return container;
 }
 
 dz1.dz1_1();
@@ -26,10 +26,9 @@ dz1.dz4();
 dz1.dz5();
 dz1.dz6_diff();
 
-
 makeInteractiveList(createContainer('dz7'));
 dayOfWeek(createContainer('dz81'));
 examineYounger(createContainer('dz82'));
 circleLengthAndSquare(createContainer('dz91'));
 quadricEquation(createContainer('dz92'));
-validateString(createContainer('dz10'))
+validateString(createContainer('dz10'));

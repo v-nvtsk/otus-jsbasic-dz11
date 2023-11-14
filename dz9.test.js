@@ -8,67 +8,67 @@
 выводящую корни квадратного уравнения с коэффициентами a, b и c.
 */
 
-import { rectTriangle, circleLengthAndSquare, quadricEquation } from "./dz9";
+import { rectTriangle, circleLengthAndSquare, quadricEquation } from './dz9';
 
-describe("rightTriangle", () => {
-
+describe('rightTriangle', () => {
   const testData = [
     { a: 3, b: 4, c: 5, result: true },
     { a: 4, b: 4, c: 5, result: false },
     { a: 5, b: 4, c: 5, result: false }
-  ]
-  it("should be a function", () => {
+  ];
+  it('should be a function', () => {
     expect(rectTriangle).toBeInstanceOf(Function);
-  })
-  it("should return right triangle", () => {
+  });
+  it('should return right triangle', () => {
     testData.forEach(({ a, b, c, result }) => {
-      expect(rectTriangle(a, b, c)).toBe(result)
-    })
-  })
-})
+      expect(rectTriangle(a, b, c)).toBe(result);
+    });
+  });
+});
 
-
-describe("circleLengthAndSquare", () => {
-
-  it("should be a function", () => {
+describe('circleLengthAndSquare', () => {
+  it('should be a function', () => {
     expect(circleLengthAndSquare).toBeInstanceOf(Function);
-  })
+  });
 
   const testData = [
     { r: 1, result: [2 * 3.14, 3.14] },
     { r: 'text', result: [0, 0] }
-  ]
+  ];
 
-  const parent = document.createElement('div');
-  document.body.append(parent);
-  circleLengthAndSquare(parent);
-  const input = parent.querySelector('input');
-  const button = parent.querySelector('button');
-  const resultString = parent.querySelector('p')
+  let parent;
+  let input;
+  let button;
+  let resultString;
+  beforeEach(() => {
+    parent = document.createElement('div');
+    circleLengthAndSquare(parent);
+    input = parent.querySelector('input');
+    button = parent.querySelector('button');
+    resultString = parent.querySelector('p');
+  });
 
-  it("should create initial markup", () => {
+  it('should create initial markup', () => {
     expect(input).toBeTruthy();
     expect(button).toBeTruthy();
     expect(button).toBeTruthy();
     expect(button.innerHTML).toBe('Calculate');
     expect(resultString).toBeTruthy();
-  })
+  });
 
-  it("should return circle and square", () => {
+  it('should return circle and square', () => {
     testData.forEach(({ r, result }) => {
       input.value = r.toString();
       button.click();
       expect(resultString.innerText).toEqual(`Длина окружности: ${result[0]}; Площадь круга: ${result[1]}`);
-    })
-  })
+    });
+  });
+});
 
-})
-
-describe("quadricEquation", () => {
-
-  it("should be a function", () => {
+describe('quadricEquation', () => {
+  it('should be a function', () => {
     expect(quadricEquation).toBeInstanceOf(Function);
-  })
+  });
 
   const testData = [
     { a: 'text', b: 2, c: 1, result: `Error` },
@@ -82,19 +82,25 @@ describe("quadricEquation", () => {
     { a: 1, b: 2, c: 3, result: 'No roots' } // x^2 + 2x + 3 = 0 (Complex roots)
   ];
 
-  const parent = document.createElement('div');
-  document.body.append(parent);
+  let parent;
+  let inputA;
+  let inputB;
+  let inputC;
+  let button;
+  let resultString;
+  beforeEach(() => {
+    parent = document.createElement('div');
+    quadricEquation(parent);
 
-  quadricEquation(parent);
+    inputA = parent.querySelector('input.inputA');
+    inputB = parent.querySelector('input.inputB');
+    inputC = parent.querySelector('input.inputC');
 
-  const inputA = parent.querySelector('input.inputA');
-  const inputB = parent.querySelector('input.inputB');
-  const inputC = parent.querySelector('input.inputC');
+    button = parent.querySelector('button');
+    resultString = parent.querySelector('p');
+  });
 
-  const button = parent.querySelector('button');
-  const resultString = parent.querySelector('p')
-
-  it("should create initial markup", () => {
+  it('should create initial markup', () => {
     expect(inputA).toBeTruthy();
     expect(inputB).toBeTruthy();
     expect(inputC).toBeTruthy();
@@ -103,7 +109,7 @@ describe("quadricEquation", () => {
     expect(button.innerHTML).toBe('Calculate');
 
     expect(resultString).toBeTruthy();
-  })
+  });
 
   testData.forEach(({ a, b, c, result }) => {
     it(`should return '${result}' for a = ${a}, b = ${b}, c = ${c}`, () => {
@@ -112,7 +118,6 @@ describe("quadricEquation", () => {
       inputC.value = c.toString();
       button.click();
       expect(resultString.innerHTML).toEqual(result);
-    })
-  })
-
-})
+    });
+  });
+});
